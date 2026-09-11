@@ -1,0 +1,234 @@
+:root {
+  --bg: #0f172a;
+  --calc-bg: #1e293b;
+  --screen-bg: #0b1120;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --btn-num: #334155;
+  --btn-num-hover: #475569;
+  --btn-op: #3b82f6;
+  --btn-op-hover: #2563eb;
+  --btn-action: #475569;
+  --btn-action-hover: #64748b;
+  --btn-equal: #10b981;
+  --btn-equal-hover: #059669;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 760px;
+  width: 100%;
+  justify-content: center;
+}
+
+.calculator {
+  background: var(--calc-bg);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 360px;
+}
+
+.display-screen {
+  background: var(--screen-bg);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  margin-bottom: 1.25rem;
+  text-align: right;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display-history {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-height: 1.2rem;
+}
+
+.display-current {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+}
+
+.sync-status {
+  font-size: 0.7rem;
+  color: #10b981;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sync-dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.15s,
+    transform 0.05s;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.btn-num {
+  background: var(--btn-num);
+  color: var(--text-main);
+}
+.btn-num:hover {
+  background: var(--btn-num-hover);
+}
+
+.btn-op {
+  background: var(--btn-op);
+  color: #ffffff;
+}
+.btn-op:hover {
+  background: var(--btn-op-hover);
+}
+
+.btn-action {
+  background: var(--btn-action);
+  color: var(--text-main);
+}
+.btn-action:hover {
+  background: var(--btn-action-hover);
+}
+
+.btn-equal {
+  background: var(--btn-equal);
+  color: #ffffff;
+  grid-column: span 2;
+}
+.btn-equal:hover {
+  background: var(--btn-equal-hover);
+}
+
+/* History Log Sidebar */
+.history-card {
+  background: var(--calc-bg);
+  border-radius: 20px;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-header h3 {
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.btn-clear-history {
+  background: transparent;
+  border: none;
+  color: #f87171;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn-clear-history:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.history-list {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.history-item {
+  background: var(--screen-bg);
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.history-item:hover {
+  background: #1e293b;
+}
+
+.history-expr {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.history-res {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.empty-msg {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}

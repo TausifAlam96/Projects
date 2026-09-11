@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator with LocalStorage</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Calculator Main -->
+      <div class="calculator">
+        <div class="sync-status">
+          <span class="sync-dot"></span>
+          <span>Saved in localStorage</span>
+        </div>
+
+        <div class="display-screen">
+          <div id="display-history" class="display-history"></div>
+          <div id="display-current" class="display-current">0</div>
+        </div>
+
+        <div class="keypad">
+          <button class="btn-action" data-action="clear">AC</button>
+          <button class="btn-action" data-action="delete">DEL</button>
+          <button class="btn-op" data-action="%">%</button>
+          <button class="btn-op" data-action="/">÷</button>
+
+          <button class="btn-num" data-num="7">7</button>
+          <button class="btn-num" data-num="8">8</button>
+          <button class="btn-num" data-num="9">9</button>
+          <button class="btn-op" data-action="*">×</button>
+
+          <button class="btn-num" data-num="4">4</button>
+          <button class="btn-num" data-num="5">5</button>
+          <button class="btn-num" data-num="6">6</button>
+          <button class="btn-op" data-action="-">−</button>
+
+          <button class="btn-num" data-num="1">1</button>
+          <button class="btn-num" data-num="2">2</button>
+          <button class="btn-num" data-num="3">3</button>
+          <button class="btn-op" data-action="+">+</button>
+
+          <button class="btn-num" data-num="0">0</button>
+          <button class="btn-num" data-num=".">.</button>
+          <button class="btn-equal" data-action="calculate">=</button>
+        </div>
+      </div>
+
+      <!-- History Sidebar -->
+      <div class="history-card">
+        <div class="history-header">
+          <h3>History</h3>
+          <button id="clear-history-btn" class="btn-clear-history">
+            Clear
+          </button>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
