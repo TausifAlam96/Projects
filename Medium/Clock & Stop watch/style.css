@@ -1,0 +1,223 @@
+/* CSS Styling */
+:root {
+  --bg-color: #121212;
+  --panel-bg: #1e1e1e;
+  --primary: #00e676;
+  --secondary: #29b6f6;
+  --danger: #ff5252;
+  --text-light: #ffffff;
+  --text-muted: #888888;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none; /* Prevents text selection during swipe */
+}
+
+#app-container {
+  width: 100%;
+  /* max-width: 450px; */
+  height: 100dvh; /* Mobile friendly height */
+  max-height: 850px;
+  overflow: hidden;
+  position: relative;
+  background: var(--panel-bg);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); */
+}
+
+#slider {
+  display: flex;
+  width: 200%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateX(-50%); /* Starts on Clock (Right side) */
+}
+
+.screen {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Clock Styles */
+.screen-title {
+  position: absolute;
+  color: var(--text-muted);
+  animation: pulse 2s infinite;
+}
+.red-dot {
+  color: tomato;
+  font-size: 5rem;
+  animation: pulse 2s infinite;
+}
+
+#clock-display {
+  font-size: 8rem;
+  margin: auto 0;
+  font-weight: bold;
+  /* color: var(--primary); */
+  color: grey;
+  /* text-shadow: 0 0 20px rgba(0, 230, 118, 0.3); */
+}
+@media (max-width: 768px) {
+  #clock-display {
+    font-size: 6rem;
+  }
+}
+@media (max-width: 425px) {
+  #clock-display {
+    font-size: 4rem;
+  }
+}
+
+.date-display {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-top: -20px;
+}
+
+/* Stopwatch Styles */
+#stopwatch-display {
+  font-size: 3.5rem;
+  margin: 20px 0;
+  font-weight: bold;
+  color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #333;
+  color: white;
+  transition: all 0.2s;
+  min-width: 90px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#start-stop-btn {
+  background: var(--primary);
+  color: #000;
+}
+
+.timestamps-container {
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+#timestamps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#timestamps-list li {
+  background: #2a2a2a;
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pagination & Hints */
+.hint {
+  position: absolute;
+  bottom: 60px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: var(--text-light);
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}

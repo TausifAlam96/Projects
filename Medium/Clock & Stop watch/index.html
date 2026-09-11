@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipeable Clock & Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app-container">
+      <div id="slider">
+        <!-- Screen 1: Stopwatch (Left Side) -->
+        <div id="stopwatch-screen" class="screen">
+          <h2>Stopwatch</h2>
+          <div id="stopwatch-display">00:00.00</div>
+          <div class="controls">
+            <button id="start-stop-btn">Start</button>
+            <button id="timestamp-btn" disabled>Lap</button>
+            <button id="reset-btn">Reset</button>
+          </div>
+          <div class="timestamps-container">
+            <ul id="timestamps-list"></ul>
+          </div>
+          <div class="hint">Swipe Left &larr; for Clock</div>
+        </div>
+
+        <!-- Screen 2: Clock (Right Side - Default) -->
+        <div id="clock-screen" class="screen">
+          <h2 class="screen-title">
+            <span>Live Clock</span> <span class="red-dot">.</span>
+          </h2>
+          <div class="date-display" id="date-display">Monday, Jan 1</div>
+          <div id="clock-display">00:00:00</div>
+          <div class="hint">Swipe Right &rarr; for Stopwatch</div>
+        </div>
+      </div>
+
+      <!-- Navigation Indicators -->
+      <div class="dots">
+        <div class="dot" id="dot-stopwatch"></div>
+        <div class="dot active" id="dot-clock"></div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
