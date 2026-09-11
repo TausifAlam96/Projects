@@ -1,0 +1,263 @@
+:root {
+  --bg: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --edit: #0ea5e9;
+  --edit-hover: #0284c7;
+  --border: #e5e7eb;
+
+  --p-high-bg: #fee2e2;
+  --p-high-text: #991b1b;
+  --p-med-bg: #fef3c7;
+  --p-med-text: #92400e;
+  --p-low-bg: #dcfce7;
+  --p-low-text: #166534;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 680px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--text-main);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+input[type="text"],
+select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+input[type="text"] {
+  flex: 1;
+}
+
+select {
+  cursor: pointer;
+  background-color: white;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  flex: 1;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-cancel {
+  background-color: #9ca3af;
+  color: white;
+  display: none;
+}
+
+.btn-cancel:hover {
+  background-color: #6b7280;
+}
+
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+  background-color: #f9fafb;
+}
+
+.todo-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.todo-main input[type="checkbox"] {
+  margin-top: 0.25rem;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.todo-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.todo-text {
+  font-size: 1rem;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.priority-high {
+  background-color: var(--p-high-bg);
+  color: var(--p-high-text);
+}
+
+.priority-medium {
+  background-color: var(--p-med-bg);
+  color: var(--p-med-text);
+}
+
+.priority-low {
+  background-color: var(--p-low-bg);
+  color: var(--p-low-text);
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.action-btn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.btn-edit {
+  background-color: var(--edit);
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: var(--edit-hover);
+}
+
+.btn-delete {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: var(--danger-hover);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem;
+  font-style: italic;
+}
+
+@media (max-width: 540px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .todo-item {
+    flex-direction: column;
+  }
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
