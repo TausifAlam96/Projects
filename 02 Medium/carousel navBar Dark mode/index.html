@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 1. NAVIGATION BAR -->
+    <header class="header">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <span class="logo-mark"></span>
+          <span>AuraUI</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#carousel" class="active">Showcase</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#company">Company</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Bonus: Dark/Light Mode Switcher -->
+          <button
+            id="themeToggle"
+            class="btn-theme"
+            title="Toggle Theme"
+            aria-label="Toggle Color Theme"
+          >
+            🌙
+          </button>
+          <a href="#signup" class="btn-primary">Get Started</a>
+          <button
+            class="hamburger"
+            id="menuToggle"
+            aria-label="Toggle Navigation"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. CAROUSEL -->
+      <section class="carousel-section" id="carousel">
+        <div class="container">
+          <div class="carousel-wrapper" id="carouselWrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Slide 1 -->
+              <div
+                class="carousel-slide"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1600&q=80&quot;);
+                "
+              >
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                  <span class="slide-tag">Next-Gen Stack</span>
+                  <h1 class="slide-title">Engineered for Rapid Performance.</h1>
+                  <p class="slide-desc">
+                    Harness scalable component systems and intuitive
+                    architecture tailored to modern browser runtimes.
+                  </p>
+                  <a href="#explore" class="btn-primary">Explore Platform</a>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div
+                class="carousel-slide"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80&quot;);
+                "
+              >
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                  <span class="slide-tag">Modular Design</span>
+                  <h2 class="slide-title">
+                    Refined Aesthetics, Zero Friction.
+                  </h2>
+                  <p class="slide-desc">
+                    Combine pre-styled visual foundations with full
+                    customization capabilities across every device breakpoint.
+                  </p>
+                  <a href="#components" class="btn-primary"
+                    >Browse Components</a
+                  >
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="carousel-slide"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80&quot;);
+                "
+              >
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                  <span class="slide-tag">Cloud-Ready</span>
+                  <h2 class="slide-title">Global Latency Under 20ms.</h2>
+                  <p class="slide-desc">
+                    Deploy your web applications across globally distributed
+                    edge nodes with automatic cache invalidation.
+                  </p>
+                  <a href="#network" class="btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <button
+              class="carousel-nav prev"
+              id="prevBtn"
+              aria-label="Previous Slide"
+            >
+              ‹
+            </button>
+            <button
+              class="carousel-nav next"
+              id="nextBtn"
+              aria-label="Next Slide"
+            >
+              ›
+            </button>
+
+            <!-- Indicators -->
+            <div class="carousel-indicators" id="indicators"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BONUS ADDITION: FEATURE CARDS -->
+      <section class="features-section" id="features">
+        <div class="container">
+          <div class="features-header">
+            <h2>Core Capabilities</h2>
+            <p>Everything required to launch standard-compliant frontends.</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <span class="feature-icon">⚡</span>
+              <h3 class="feature-title">Fast Repaint Cycles</h3>
+              <p class="feature-text">
+                Zero runtime dependencies and clean transitions safeguard 60 FPS
+                scroll and animation budgets.
+              </p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">🛡️</span>
+              <h3 class="feature-title">Accessibility First</h3>
+              <p class="feature-text">
+                Complies with ARIA design patterns for dynamic overlays,
+                keyboards, and assistive screen readers.
+              </p>
+            </div>
+            <div class="feature-card">
+              <span class="feature-icon">📱</span>
+              <h3 class="feature-title">Fluid Layouts</h3>
+              <p class="feature-text">
+                Constructed with Flexbox, CSS Grid, and responsive viewports for
+                phones, tablets, and ultrawides.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 3. FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <span class="logo-mark"></span>
+              <span>AuraUI</span>
+            </a>
+            <p>
+              High-performance frontend boilerplates and modular UI patterns
+              designed for modern web applications.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Twitter">𝕏</a>
+              <a href="#" aria-label="GitHub">Git</a>
+              <a href="#" aria-label="LinkedIn">In</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="#">Design System</a></li>
+              <li><a href="#">Component Library</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Releases</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Community Forum</a></li>
+              <li><a href="#">Developer API</a></li>
+              <li><a href="#">Style Guides</a></li>
+              <li><a href="#">Status</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 AuraUI Systems Inc. All rights reserved.</p>
+          <p>Crafted with clean HTML, CSS, and Vanilla JavaScript.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
